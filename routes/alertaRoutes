@@ -1,0 +1,24 @@
+const express = require('express');
+
+const router = express.Router();
+const {
+  criarAlerta,
+  buscarAlertas,
+  buscarAlertaPorId,
+  resolverAlerta,
+  deletarAlerta
+} = require('../controller/alertaController');
+
+
+router.get('/', buscarAlertas);
+
+router.post('/', criarAlerta);
+
+router.route('/:id/resolver')
+  .patch(resolverAlerta);
+
+router.route('/:id')
+  .get(buscarAlertaPorId)
+  .delete(deletarAlerta);
+
+module.exports = router;

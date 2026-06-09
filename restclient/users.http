@@ -1,0 +1,34 @@
+@url=http://localhost:3000/users
+
+###Obter todos os usuarios
+GET {{url}}
+Authorization: 123456
+
+###Obter usuario por nome
+GET {{url}}?name=An
+
+###Obter usuario por id
+GET {{url}}/6a03162485db6c51e24bc18c
+
+### Criar Usuario
+POST {{url}}
+Content-Type: application/json
+
+{
+    "name": "Antonio Neto",
+    "email": "antonioneto@example.com",
+    "password": "123456"
+}
+
+### Atualizar Usuario
+PUT {{url}}/6a03162485db6c51e24bc18c
+Content-Type: application/json
+
+{
+    "name": "Antonio Olimpio Neto",
+    "email": "antonioolimpioNeto@example.com",
+    "password": "123456"
+}
+
+### Deletar Usuario
+DELETE {{url}}/6a031fadb122c5743e88a08b

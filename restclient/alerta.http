@@ -1,0 +1,41 @@
+@url=http://localhost:3000/alertas
+
+###Obter todos os alertas
+GET {{url}}
+Authorization: 123456
+
+###Obter alerta por estacaoId
+GET {{url}}?estacaoId=Antonio%20Neto
+
+###Obter alerta por id
+GET {{url}}/6a03162485db6c51e24bc18c
+
+### Criar Alerta
+POST {{url}}
+Content-Type: application/json
+
+{
+    "estacaoId": "estacao123",
+    "tipoAlerta": "SENSOR_INATIVO",
+    "descricao": "Falha crítica detectada na estação",
+    "gravidade": "CRITICA",
+    "resolvido": false,
+    "timestamp": "2023-10-01T00:00:00.000Z"
+
+}
+
+### Atualizar alerta
+PUT {{url}}/6a03162485db6c51e24bc18c
+Content-Type: application/json
+
+{
+    "estacaoId": "estacao123",
+    "tipoAlerta": "SENSOR_INATIVO",
+    "descricao": "Falha moderada detectada na estação",
+    "gravidade": "MEDIA",
+    "resolvido": true,
+    "timestamp": "2023-10-01T00:00:00.000Z"
+}
+
+### Deletar Alerta
+DELETE {{url}}/6a031fadb122c5743e88a08b
