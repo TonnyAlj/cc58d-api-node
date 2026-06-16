@@ -1,16 +1,16 @@
 services:
-  webapp:
+  node_api:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: webapp
+    container_name: node_api
     restart: unless-stopped
     ports:
-      - "90:80"
+      - "3000:3000"
     networks:
-      - devops_net
+      - devops_api_node_network
 
 networks:
-  devops_net:
+  devops_api_node_network:
     name: devops_api_node_network
     external: true
