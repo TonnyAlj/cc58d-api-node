@@ -1,0 +1,16 @@
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: webapp
+    restart: unless-stopped
+    ports:
+      - "90:80"
+    networks:
+      - devops_net
+
+networks:
+  devops_net:
+    name: devops_net
+    external: true
