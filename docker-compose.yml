@@ -12,5 +12,5 @@ services:
 
 networks:
   devops_net:
-    name: devops_net
+    name: devops_api_node_network
     external: true
